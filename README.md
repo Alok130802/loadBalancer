@@ -29,15 +29,15 @@ Please follow the installation process from the official documentation of all th
 Use `Dockerfile` in server and farm to build an image.
 
 ```bash
-cd loadBalancer/Server
-docker build -t "loadBalancer/server" .
+cd loadBalancer/Server/src
+docker build -t "loadbalancer/server" .
 ```
 
 Build Worker image:
 
 ```bash
-cd loadBalancer/Worker
-docker build -t "loadBalancer/worker" .
+cd loadBalancer/Worker/src
+docker build -t "loadbalancer/worker" .
 ```
 
 ## How to use

@@ -2,7 +2,7 @@ version: '3'
 
 services:
   server:
-    image: loadBalancer/server
+    image: loadbalancer/server
     ports:
       - "2222"
       - "7777:7777"
@@ -10,7 +10,7 @@ services:
   worker:
     depends_on:
       - server
-    image: loadBalancer/worker
+    image: loadbalancer/worker
     expose:
       - "5555"
     links:
