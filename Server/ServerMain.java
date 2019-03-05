@@ -20,9 +20,9 @@ public class ServerMain {
 		farmprovider = new FarmProvider();
 		// TODO Auto-generated method stub
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-		System.out.print("This server's IP: ");
-		serverIpAddress = InetAddress.getByName(reader.readLine());
-
+		// System.out.print("This server's IP: ");
+		// serverIpAddress = InetAddress.getByName(reader.readLine());
+		serverIpAddress = InetAddress.getByName("server");
 		gatway.initializationFarms();
 
 		gatway.acceptClientConnectionToServicce();
@@ -30,34 +30,29 @@ public class ServerMain {
 	}
 
 	public void initializationFarms() throws Exception {
-		
+
 		Thread worketConnect = new Thread(new WorkerNodeConnection(workerNodeConnectionPort));
 		worketConnect.start();
-		
-		/*BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
-		System.out.println("");
-		System.out.println("");
-		System.out.println("Farm settings->");
-		System.out.println("");
-		System.out.print("Number of Farms: ");
-		numberOfFaarms = Integer.parseInt(reader.readLine());
 
-		for (int i = 0; i < numberOfFaarms; i++) {
-			System.out.print("IP of farm " + (i + 1) + " : ");
-			String ip = reader.readLine();
-			InetAddress inetAddress = InetAddress.getByName(ip);
-			System.out.print("Farm " + (i + 1) + "'s Port: ");
-			int port = Integer.parseInt(reader.readLine());
-			farmprovider.listoffarms.add(new FarmId(inetAddress, port));
-		}
-		System.out.println("<====Farm registration with server done=====>");
-		System.out.println("");
-		System.out.println("List of sub-servers active:");
-		for (int i = 0; i < farmprovider.listoffarms.size(); i++) {
-			FarmId farmId = farmprovider.listoffarms.get(i);
-			System.out.println("Farm Number = " + (i + 1) + "-> IP: " + farmId.ipaddress.getHostAddress() + ", Port: "
-					+ farmId.port);
-		}*/
+		/*
+		 * BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+		 * System.out.println(""); System.out.println("");
+		 * System.out.println("Farm settings->"); System.out.println("");
+		 * System.out.print("Number of Farms: "); numberOfFaarms =
+		 * Integer.parseInt(reader.readLine());
+		 * 
+		 * for (int i = 0; i < numberOfFaarms; i++) { System.out.print("IP of farm " +
+		 * (i + 1) + " : "); String ip = reader.readLine(); InetAddress inetAddress =
+		 * InetAddress.getByName(ip); System.out.print("Farm " + (i + 1) + "'s Port: ");
+		 * int port = Integer.parseInt(reader.readLine());
+		 * farmprovider.listoffarms.add(new FarmId(inetAddress, port)); }
+		 * System.out.println("<====Farm registration with server done=====>");
+		 * System.out.println(""); System.out.println("List of sub-servers active:");
+		 * for (int i = 0; i < farmprovider.listoffarms.size(); i++) { FarmId farmId =
+		 * farmprovider.listoffarms.get(i); System.out.println("Farm Number = " + (i +
+		 * 1) + "-> IP: " + farmId.ipaddress.getHostAddress() + ", Port: " +
+		 * farmId.port); }
+		 */
 	}
 
 	public void acceptClientConnectionToServicce() throws Exception {
@@ -68,12 +63,11 @@ public class ServerMain {
 		clientListenPort = Integer.parseInt(reader.readLine());
 		clientServerSocket = new ServerSocket(clientListenPort, 20, serverIpAddress);
 		System.out.println("<=======Server is running for client=======> ");
-// update server thread start hear
+		// update server thread start hear
 
-	
 		while (true) {
 			Client client = new Client(new ClientSocket(clientServerSocket.accept()));
-			//System.out.println("client created");
+			// System.out.println("client created");
 			Thread newconnection = new Thread(client);
 			newconnection.start();
 			System.out.println("<------Connection accepted and new thread started ------->");
