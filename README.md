@@ -29,15 +29,14 @@ Please follow the installation process from the official documentation of all th
 Use `Dockerfile` in server and farm to build an image.
 
 ```bash
-cd loadBalancer/Server/src
-docker build -t "loadbalancer/server" .
+cd loadBalancer
+docker build -t "loadbalancer/server" Server
 ```
 
 Build Worker image:
 
 ```bash
-cd loadBalancer/Worker/src
-docker build -t "loadbalancer/worker" .
+docker build -t "loadbalancer/worker" Worker
 ```
 
 ## How to use
@@ -45,13 +44,12 @@ docker build -t "loadbalancer/worker" .
 Once images are created we will use docker-compose to turn up the server and the worker nodes
 
 ```bash
-cd loadBalancer
 docker-compose up
 ```
 
 Now we can use client to connect to the server
 ```
-cd loadBalancer/Client/src/
+cd loadBalancer/Client/
 javac ClientMain.java
 java ClientMain
 ```
