@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public class ServerMain {
 	static InetAddress serverIpAddress = null;
 	int farmListenport;
-	int clientListenPort;
+	int clientListenPort = 7777;
 	int workerNodeConnectionPort = 2222;
 	static FarmProvider farmprovider = null;
 	ServerSocket farmSocket = null;
@@ -58,9 +58,9 @@ public class ServerMain {
 	public void acceptClientConnectionToServicce() throws Exception {
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 		System.out.println("");
-		System.out.print("Listening Port for Clients: ");
+		// System.out.print("Listening Port for Clients: ");
 
-		clientListenPort = Integer.parseInt(reader.readLine());
+		c// lientListenPort = Integer.parseInt(reader.readLine());
 		clientServerSocket = new ServerSocket(clientListenPort, 20, serverIpAddress);
 		System.out.println("<=======Server is running for client=======> ");
 		// update server thread start hear
