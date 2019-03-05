@@ -60,7 +60,7 @@ public class ServerMain {
 		System.out.println("");
 		// System.out.print("Listening Port for Clients: ");
 
-		c// lientListenPort = Integer.parseInt(reader.readLine());
+		// lientListenPort = Integer.parseInt(reader.readLine());
 		clientServerSocket = new ServerSocket(clientListenPort, 20, serverIpAddress);
 		System.out.println("<=======Server is running for client=======> ");
 		// update server thread start hear
