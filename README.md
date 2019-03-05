@@ -58,3 +58,8 @@ Provide localhost as the server IP if containers are also running on the same ma
 If you are remotely connecting to the server then provide the IP of host which is running the server-worker containers.
 
 Input `done` when you want to quit.
+
+
+### ToDo:
+1. Fix the server crash when clients exit.
+2. Support to very large number inputs.
