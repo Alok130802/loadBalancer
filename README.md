@@ -1,6 +1,13 @@
 #  Load Balancer Prototype
 A mini project made to implement concepts of client server architecture.
 The distribution of load takes place based on the CPU usage of each worker nodes.
+The client sends a number to the server and it receives the prime number which are smaller that the provided number.
+Ex: 
+Input: 100
+Output: 97
+
+Input: 6
+Output: 5
 
 #### Client
 Client will request use for server's IP and connect to the server on port 7777.
@@ -52,3 +59,4 @@ java ClientMain
 Provide localhost as the server IP if containers are also running on the same machine.
 If you are remotely connecting to the server then provide the IP of host which is running the server-worker containers.
 
+Input `done` when you want to quit.
